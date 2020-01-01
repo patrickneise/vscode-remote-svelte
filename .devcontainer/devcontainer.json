@@ -1,0 +1,20 @@
+{
+  "name": "Svelte",
+  "dockerFile": "Dockerfile",
+  "appPort": [
+    5000
+  ],
+  "runArgs": [
+    "-u",
+    "node"
+  ],
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/ash"
+  },
+  "postCreateCommand": "yarn install",
+  "extensions": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "jamesbirtles.svelte-vscode"
+  ]
+}
