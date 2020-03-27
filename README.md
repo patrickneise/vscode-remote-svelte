@@ -1,100 +1,40 @@
-README still in progress.
+# VS Code Remote Development Container: Svelte
 
----
+This is a **[VS Code Remote - Container](https://aka.ms/vscode-remote/containers)** for **[Svelte](https://svelte.dev/)** web app development.
 
+## Setting up the development container
 
-The below includes the original README.md from Svelte
+Follow these steps to open this sample in a container:
 
-*Psst — looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
+1. If this is your first time using a development container, please follow the [getting started steps](https://aka.ms/vscode-remote/containers/getting-started).
 
----
+2. To start development with this container:
 
-# svelte app
+   - Clone this repository to your local filesystem.
 
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
+      >NOTE: Replace 'my-project' below with the name of your project
 
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
+      ```shell
+      git clone https://github.com/patrickneise/vscode-remote-svelte.git my-project
+      ```
+   - [Update the remote URL](https://help.github.com/en/github/using-git/changing-a-remotes-url) for the cloned repo to your projects repository.
+   - Press <kbd>F1</kbd> and select the **Remote-Containers: Open Folder in Container...** command.
+   - Select the cloned copy of this folder, wait for the container to start, and start developing!
 
-```bash
-npx degit sveltejs/template svelte-app
-cd svelte-app
-```
+## Development in the container
 
-*Note that you will need to have [Node.js](https://nodejs.org) installed.*
-
-
-## Get started
-
-Install the dependencies...
-
-```bash
-cd svelte-app
-npm install
-```
-
-...then start [Rollup](https://rollupjs.org):
-
-```bash
-npm run dev
-```
-
-Navigate to [localhost:5000](http://localhost:5000). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
-
-By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the `sirv` commands in package.json to include the option `--host 0.0.0.0`.
+The container has the following installed:
+   - [Svelte](https://svelte.dev/) with the [Svelte project template](https://github.com/sveltejs/template) as a starter.
+   - VSCode Extensions installed in the container
+     - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+     - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+     - [Svelte](https://marketplace.visualstudio.com/items?itemName=JamesBirtles.svelte-vscode)
+   - Exposed ports
+     - `5000` for development server
+     - `35729` for hot reload
 
 
-## Building and running in production mode
-
-To create an optimised version of the app:
-
-```bash
-npm run build
-```
-
-You can run the newly built app with `npm run start`. This uses [sirv](https://github.com/lukeed/sirv), which is included in your package.json's `dependencies` so that the app will work when you deploy to platforms like [Heroku](https://heroku.com).
-
-
-## Single-page app mode
-
-By default, sirv will only respond to requests that match files in `public`. This is to maximise compatibility with static fileservers, allowing you to deploy your app anywhere.
-
-If you're building a single-page app (SPA) with multiple routes, sirv needs to be able to respond to requests for *any* path. You can make it so by editing the `"start"` command in package.json:
-
-```js
-"start": "sirv public --single"
-```
-
-
-## Deploying to the web
-
-### With [now](https://zeit.co/now)
-
-Install `now` if you haven't already:
-
-```bash
-npm install -g now
-```
-
-Then, from within your project folder:
-
-```bash
-cd public
-now deploy --name my-project
-```
-
-As an alternative, use the [Now desktop client](https://zeit.co/download) and simply drag the unzipped project folder to the taskbar icon.
-
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-npm run build
-surge public my-project.surge.sh
+Start the development server:
+```shell
+yarn dev
 ```
