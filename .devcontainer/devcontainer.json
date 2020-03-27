@@ -1,15 +1,18 @@
 {
-  "name": "Svelte",
+  "name": "Svelte VSCode Remote Container",
   "dockerFile": "Dockerfile",
   "appPort": [
-    5000
+    5000,
+    35729
   ],
   "runArgs": [
     "-u",
     "node"
   ],
   "settings": {
-    "terminal.integrated.shell.linux": "/bin/ash"
+    "terminal.integrated.shell.linux": "/bin/ash",
+    "editor.formatOnSave": true,  
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "postCreateCommand": "yarn install",
   "extensions": [
